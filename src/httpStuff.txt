@@ -7,7 +7,4 @@ headers(key: value)
 body
 ]
 
-HTTP request:
-[
-HTTP/1.1 200 OK         // if it cant find you = 404 NOT FOUND
 
