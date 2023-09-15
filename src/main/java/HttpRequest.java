@@ -4,10 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HttpRequest {
-
     private String requestLine;
     private Map<String, String> headers;
-
     public HttpRequest(Socket clientSocket) throws IOException {
         headers = new HashMap<>();
         requestLine = readLine(clientSocket);
@@ -29,6 +27,14 @@ public class HttpRequest {
         character = socket.getInputStream().read();
 
         return sb.toString();
+    }
+
+    public String getPath(){
+        String[] requestParts = requestLine.split(" ", 3);
+        if (requestParts.length >= 2)
+            return requestParts[1];
+
+        return "";
     }
     private void printThings(){
         System.out.println(requestLine);

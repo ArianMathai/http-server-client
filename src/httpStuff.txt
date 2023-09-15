@@ -8,3 +8,5 @@ body
 ]
 
 
+request could look like this: GET /path/to/resource HTTP/1.1
+
